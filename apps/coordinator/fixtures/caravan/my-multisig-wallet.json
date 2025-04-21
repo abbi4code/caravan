@@ -1,0 +1,35 @@
+{
+    "name": "My Multisig Wallet",
+    "uuid": "",
+    "addressType": "P2SH-P2WSH",
+    "network": "regtest",
+    "client": {
+      "type": "private",
+      "url": "http://regtest.localhost:8080",
+      "username": "abhishek",
+      "password": "abhishek",
+      "walletName": "watcher2"
+    },
+    "quorum": {
+      "requiredSigners": 1,
+      "totalSigners": 2
+    },
+    "extendedPublicKeys": [
+      {
+        "name": "Extended Public Key 1",
+        "bip32Path": "m/49'/1'/0'",
+        "xpub": "tpubDCHex3dTt2uvkyTosCPhsyX3b3cXUxhSChDeKTUd5XTXB1EjNQX4tG3QfRLKFmeB7C7GLLyau9p1Em38XGXeNQVcpERRkbUGfQtgu6LhHWC",
+        "xfp": "df77c053",
+        "method": "text"
+      },
+      {
+        "name": "Extended Public Key 2",
+        "bip32Path": "m/49'/1'/0'",
+        "xpub": "tpubDCKG83ENBnpk5LHNcoY79wJinukgKMBnj7CKc9WH68gnnhAWUFEqNBqmEBE3upjVfzRPYemh1L5NTMxwjV85m3L97KEwrjZWMZxfBup5EwA",
+        "xfp": "a0c93c7e",
+        "method": "text"
+      }
+    ],
+    "startingAddressIndex": 0,
+    "ledgerPolicyHmacs": []
+  }
