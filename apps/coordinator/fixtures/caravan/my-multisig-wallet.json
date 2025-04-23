@@ -8,7 +8,7 @@
       "url": "http://regtest.localhost:8080",
       "username": "abhishek",
       "password": "abhishek",
-      "walletName": "watcher2"
+      "walletName": "watcher"
     },
     "quorum": {
       "requiredSigners": 1,
@@ -18,15 +18,15 @@
       {
         "name": "Extended Public Key 1",
         "bip32Path": "m/49'/1'/0'",
-        "xpub": "tpubDCHex3dTt2uvkyTosCPhsyX3b3cXUxhSChDeKTUd5XTXB1EjNQX4tG3QfRLKFmeB7C7GLLyau9p1Em38XGXeNQVcpERRkbUGfQtgu6LhHWC",
-        "xfp": "df77c053",
+        "xpub": "tpubDDNGF2gFaXkTc26EBhZx3odJpvHzeWTaTBG6WHtXary2D8dXqdR88u5c6vE7UwwvcPv4AKxgv7V4Jg1XWFUTU4z5RvUQ1uAuL7mZctq4T22",
+        "xfp": "1e858a96",
         "method": "text"
       },
       {
         "name": "Extended Public Key 2",
         "bip32Path": "m/49'/1'/0'",
-        "xpub": "tpubDCKG83ENBnpk5LHNcoY79wJinukgKMBnj7CKc9WH68gnnhAWUFEqNBqmEBE3upjVfzRPYemh1L5NTMxwjV85m3L97KEwrjZWMZxfBup5EwA",
-        "xfp": "a0c93c7e",
+        "xpub": "tpubDCXZSKm4mseSTZfPVRNjnwyzhDt8CfJD1DbBrJAZETjR3Km3uYt1ZcSksrZAmZyBPaFh42cwTKZk9zmSAvYKE1MfBp47vFQz2rpYaRgW3si",
+        "xfp": "d6078ca4",
         "method": "text"
       }
     ],
