@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  bitcoind:
+    image: ruimarinho/bitcoin-core:27-alpine
+    container_name: caravan-e2e-bitcoind
+    ports:
+      - "18443:18443"  # regtest RPC port
+      - "18444:18444"  # regtest P2P port
+    volumes:
+      - ./bitcoin-data:/home/bitcoin/.bitcoin
+      - ./bitcoin.conf:/home/bitcoin/.bitcoin/bitcoin.conf:ro
+    command: >
+      bitcoind
+      -regtest
+      -server
+      -rpcallowip=0.0.0.0/0
+      -rpcbind=0.0.0.0:18443
+      -fallbackfee=0.0002
+      -zmqpubrawblock=tcp://0.0.0.0:28332
+      -zmqpubrawtx=tcp://0.0.0.0:28333
+    healthcheck:
+      test: ["CMD", "bitcoin-cli", "-regtest", "getblockchaininfo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - caravan-e2e
+
+  nginx:
+    image: nginx:alpine
+    container_name: caravan-e2e-nginx
+    ports:
+      - "8332:8332"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      bitcoind:
+        condition: service_healthy
+    networks:
+      - caravan-e2e
+
+networks:
+  caravan-e2e:
+    driver: bridge 

@@ -1,0 +1,30 @@
+{
+  "name": "caravan-coordinator-e2e",
+  "private": true,
+  "version": "1.0.0",
+  "description": "End-to-end tests for Caravan Coordinator",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "install-browsers": "playwright install",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down -v",
+    "docker:logs": "docker-compose logs -f",
+    "docker:status": "docker-compose ps",
+    "bitcoin:cli": "docker exec caravan-e2e-bitcoind bitcoin-cli -regtest",
+    "bitcoin:setup": "npm run docker:up && npm run bitcoin:wait && npm run bitcoin:init",
+    "bitcoin:wait": "timeout 30 bash -c 'until docker exec caravan-e2e-bitcoind bitcoin-cli -regtest getblockchaininfo; do sleep 1; done'",
+    "bitcoin:init": "docker exec caravan-e2e-bitcoind bitcoin-cli -regtest generatetoaddress 101 $(docker exec caravan-e2e-bitcoind bitcoin-cli -regtest getnewaddress)"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "playwright": "^1.41.0"
+  }
+} 

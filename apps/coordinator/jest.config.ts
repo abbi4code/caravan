@@ -2,6 +2,7 @@ import type { JestConfigWithTsJest } from "ts-jest";
 
 const config: JestConfigWithTsJest = {
   testEnvironment: "jsdom",
+  testPathIgnorePatterns: ["<rootDir>/e2e/"],
   transform: {
     "\\.[jt]sx?$": "babel-jest",
   },

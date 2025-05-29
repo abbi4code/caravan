@@ -1,0 +1,20 @@
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker and Bitcoin data
+bitcoin-data/
+.env
+
+# Screenshots and artifacts
+screenshots/
+artifacts/ 

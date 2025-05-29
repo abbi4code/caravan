@@ -13,6 +13,9 @@
     "test": "turbo test",
     "test:watch": "turbo test:watch",
     "test:debug": "turbo test:debug",
+    "test:e2e": "turbo test:e2e --filter=caravan-coordinator-e2e",
+    "test:e2e:ui": "turbo test:e2e:ui --filter=caravan-coordinator-e2e",
+    "test:e2e:headed": "turbo test:e2e:headed --filter=caravan-coordinator-e2e",
     "version": "turbo run build lint test && changeset version && npm install --package-lock-only",
     "release": "turbo run build lint test && changeset publish",
     "dev:coordinator": "turbo run dev --filter=caravan-coordinator"
@@ -49,6 +52,7 @@
   "packageManager": "npm@10.5.0",
   "workspaces": [
     "apps/*",
+    "apps/*/e2e",
     "packages/*"
   ]
 }
