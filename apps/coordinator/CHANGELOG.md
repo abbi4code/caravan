@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.10.0
+
+### Minor Changes
+
+- [#311](https://github.com/caravan-bitcoin/caravan/pull/311) [`fed322e`](https://github.com/caravan-bitcoin/caravan/commit/fed322e026d496bd4842ab9bdabaa6e7b21aac70) Thanks [@ice-009](https://github.com/ice-009)! - Added the SWA Slider and minor improvements in the coordinator
+
+### Patch Changes
+
+- [#312](https://github.com/caravan-bitcoin/caravan/pull/312) [`136babd`](https://github.com/caravan-bitcoin/caravan/commit/136babdb9c03921cf8c4b206e48be676e3bd453f) Thanks [@RIYAKUMARI001](https://github.com/RIYAKUMARI001)! - Added missing `export` statements to the `WalletState` interface and selector functions in `wallet.ts`.
+  Added `@caravan/fees` as a dependency to coordinator.
+  Improves type safety and makes exports consistent across packages.
+- Updated dependencies [[`65344a9`](https://github.com/caravan-bitcoin/caravan/commit/65344a9f5890b93f4833514a3f7d331458344ab5)]:
+  - @caravan/clients@0.5.1
+
 ## 1.9.3
 
 ### Patch Changes
