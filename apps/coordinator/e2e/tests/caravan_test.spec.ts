@@ -8,7 +8,6 @@ import path from "path"
 import fs from "fs"
 
 test.describe("Caravan Wallet Creation", () => {
-  let testWallets: any[] = [];
   let walletNames: string[] = []
   let client = bitcoinClient();
   
@@ -53,8 +52,7 @@ test.describe("Caravan Wallet Creation", () => {
     try {
       const state = testStateManager.getState();
       walletNames = state.test_wallet_names;
-      testWallets = state.test_wallets;
-      console.log("Wallet loaded from global setup:", walletNames);
+
     } catch (error) {
       console.log("Error in global setup while creating wallets:", error);
     }
@@ -155,11 +153,8 @@ test.describe("Caravan Wallet Creation", () => {
     const download = await downloadPromise;
 
     const suggestedFilename = download.suggestedFilename();
-    console.log("downloaded File: ",suggestedFilename)
-    console.log("downloaded File Url: ",download.url)
-    console.log("downloaded File Path: ",download.path)
 
-    //save the file to our created download dir
+    //Save the file to our created download dir
 
     downloadedWalletFile = path.join(downloadDir,suggestedFilename);
     await download.saveAs(downloadedWalletFile);
@@ -167,7 +162,6 @@ test.describe("Caravan Wallet Creation", () => {
     expect(fs.existsSync(downloadedWalletFile)).toBe(true);
 
     const walletData = JSON.parse(fs.readFileSync(downloadedWalletFile, "utf-8"));
-    console.log("wallet-data:",walletData);
 
     expect(walletData).toHaveProperty('name');
     expect(walletData).toHaveProperty('network');
@@ -176,9 +170,6 @@ test.describe("Caravan Wallet Creation", () => {
 
     // Store the downloaded file path in shared state
     testStateManager.updateState({ downloadWalletFile: downloadedWalletFile });
-    console.log("downloaded path file", downloadedWalletFile);
-
-     console.log("Wallet creation and download test completed");
+    
   });
-
 });

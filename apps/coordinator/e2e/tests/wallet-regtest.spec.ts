@@ -53,19 +53,11 @@ test.describe("Wallet Regtest Configuration", () => {
       console.log("path1 check", paths[0]);
 
       // Save the modified file
-      //   const modifiedFile = downloadedWalletFile.replace('.json', '-regtest-modified.json');
       fs.writeFileSync(
         downloadedWalletFile,
         JSON.stringify(walletConfig, null, 2),
       );
 
-      // Update shared state
-      //   testStateManager.updateState({
-      //     downloadWalletFile: JSON.stringify(walletConfig, null ,2)
-      //   });
-
-      //   console.log('Wallet config modified successfully');
-      //   console.log('Modified file:', modifiedFile);
     } catch (error) {
       console.log("Error in wallet config modification:", error);
       throw error;
